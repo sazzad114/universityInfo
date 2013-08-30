@@ -1,0 +1,91 @@
+<?php
+Zend_Loader::loadClass('Themes',APPLICATION_PATH.'/models');
+Zend_Loader::loadClass('SideBar',APPLICATION_PATH.'/views/helpers');
+$this->headMeta()->appendHttpEquiv('Content-Type', 'text/html;charset=utf-8');
+$this->headTitle()->setSeparator(' - ');
+$this->headTitle('Students community site');
+echo $this->doctype(); ?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<?php echo $this->headMeta(); ?>
+<?php echo $this->headTitle(); ?>
+<?php
+	echo $this->headLink()->prependStylesheet($this->baseUrl().'/'.Themes::getLayoutName().'/css/style.css'); 
+?>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header-wrapper">
+		<div id="header">
+			<div id="logo">
+				<h1><a href="#"><span>University</span>info</a></h1>
+				<h3>your next step...</h3>
+			</div>
+			
+			<div id="menu">
+				<?php
+					echo $this->menu;
+				?>
+			</div>
+		</div>
+	</div>
+<!-- end #header -->
+	<div id="page">
+		<div id="page-bgtop">
+			<div id="content">
+				<?php echo $this->layout()->content; ?>
+				<div style="clear: both;">&nbsp;</div>
+			</div>
+			<!-- end #content -->
+			<div id="sidebar">
+					<ul>
+						<li>
+							<div style="clear: both;">&nbsp;</div>
+						</li>
+						<li>
+								<?php
+								if($this->themeform != null)
+								{
+									echo "<h2>Choose your theme</h2>";
+									echo $this->themeform;
+								?>
+								<br/>
+								<?php
+								}
+								?>
+						</li>
+						<li>
+							<h2>Why Universityinfo?</h2>
+							<p>Here you can get all the needed information, that can help you to take the next step for a revolution in your life.</p>
+						</li>
+						<li>
+							<h2>Top News</h2>
+							<ul>
+								<?php echo SideBar::TopNews(); ?>
+							</ul>
+						</li>
+						<li>
+							<h2>Top Universities</h2>
+							<ul>
+								<?php echo SideBar::TopUniversity(); ?>	
+							</ul>
+						</li>
+						<li>
+							<h2>Top Proffessors</h2>
+							<ul>
+								<?php echo SideBar::TopProf(); ?>	
+								
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<!-- end #sidebar -->
+				<div style="clear: both;">&nbsp;</div>
+		</div>
+	</div>
+</div>
+<div id="footer">
+	<p>Copyright (c) 2008 Sitename.com. All rights reserved. Design by <a href="http://www.freecsstemplates.org/"> CSS Templates</a>.</p>
+</div>
+</body>
+</html>

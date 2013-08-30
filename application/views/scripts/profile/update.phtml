@@ -1,0 +1,52 @@
+<h2> Update Your Profile Information Here:</h2>
+<form action="<?php echo $this->escape($this->form->getAction());?>" method="<?php echo $this->escape($this->form->getMethod()); ?>">
+<br>
+<h3>Personal Information:</h3>
+<hr>
+<?php echo $this->form->firstName;?>
+<br>
+<?php echo $this->form->lastName;?>
+<br>
+<?php echo $this->form->Dateofbirth;?>	
+<?php echo $this->form->age;?>	
+<br>
+<?php echo $this->form->religion;?>
+<br>
+<h3>Your Adress:</h3>
+<hr>
+<br>
+<?php echo $this->form->country;?>	
+<br>
+<?php echo $this->form->state;?>
+<br>
+<?php echo $this->form->city;?>	
+<br>
+<h3>Your Educational Background:</h3>
+<hr>
+<br>
+<?php echo $this->form->undergradeUni;?>
+<br>
+<?php echo $this->form->undergradeSub;?>
+<br>
+<?php echo $this->form->ugcgpa;?>
+<br>
+<?php echo $this->form->ugpassyear;?>
+<br>
+<?php echo $this->form->gradeUni;?>
+<br>
+<?php echo $this->form->gradeSub;?>	
+<br>
+<?php echo $this->form->gpassyear;?>
+<br>
+<h3>Your Test Information:</h3>
+<hr>
+<br>
+<?php echo $this->form->test;?>	
+<br>
+<?php echo $this->form->testscore;?>
+<br>
+<?php echo $this->form->testpassdate;?>
+
+<?php echo $this->form->submit;?>
+<br>
+</form>

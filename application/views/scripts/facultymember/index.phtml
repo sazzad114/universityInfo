@@ -1,0 +1,1 @@
+<h2> Faculty Members:</h2><hr><?php foreach($this->mems as $mem) : ?>	<h3>	<a href="<?php echo $this->url(array('controller'=>'facultymember','action'=>'details','facultymember_id'=>$mem['FacultyMemberID']));?>"><?php echo $this->escape($mem['Name']); ?></a> 	</h3><?php endforeach; ?>

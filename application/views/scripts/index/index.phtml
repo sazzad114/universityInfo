@@ -1,0 +1,16 @@
+<?php foreach($this->newsinfo as $newsshow) : ?>	
+			<div class="post">
+						<h2 class="title"><?php echo $this->escape($newsshow['title']); ?></h2>
+						<p class="meta"><span class="date"><?php echo $this->escape($newsshow['publish_time']);?></span><span class="posted">Posted by <?php echo $this->escape($newsshow['added_by']); ?></span></p>
+						<div class="entry">
+							<?php echo $newsshow['shortnews']; ?>
+						</div>
+						<p class="links"><a href="
+						<?php 
+								echo $this->url(array('controller'=>'news','action'=>'details', 'news_id'=>$newsshow['news_id']));
+						?>
+						
+						">Read More</a></p>
+					</div>
+				
+	<?php endforeach; ?>

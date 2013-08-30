@@ -1,0 +1,38 @@
+	
+			<div class="post">
+						<h2 class="title"><?php echo $this->escape($this->newsinfo['title']); ?></h2>
+						<p class="meta"><span class="date"><?php echo $this->escape($this->newsinfo['publish_time']);?></span><span class="posted">Posted by <?php echo $this->escape($this->newsinfo['added_by']); ?></span></p>
+						<div class="entry">
+							<?php echo $this->newsinfo['shortnews']; ?>
+							<?php echo $this->newsinfo['detailnews']; ?>
+						</div>
+					</div>
+
+<hr>
+<?php
+	Zend_Loader::loadClass('Users',APPLICATION_PATH.'/models');
+	$user = new Users();
+	
+ ?>
+<h1>Comments:</h1>
+<br/>
+<?php foreach($this->comments as $comment) : ?>
+<?php  $userinfo = $user->getUser($comment['commenter_id']); 
+	   $userinfo['password'] = "";
+?>
+	
+			<div class="comment">
+			<?php if($this->commenter == $comment['commenter_id']) { ?>
+				<p class="meta"><span class="posted"><a href="<?php echo $this->url(array('controller'=>'profile','action'=>'userdetails','user_id'=>$userinfo['user_id']));?>"><img border="0" src="<?php echo 'http://localhost/sdproject/application/picture/thumbnails/_'.$userinfo['email'].'.png'; ?>" alt="" width="50" height="50" /><?php echo " ".$this->escape($userinfo['FirstName'])." ".$this->escape($userinfo['LastName']); ?></a></span><span class="Delete"><a href="<?php echo $this->url(array('controller'=>'news','action'=>'delete','news_id'=>$comment['news_id'],'comment_id'=>$comment['comment_id']));?>">Delete</a></span></p>
+			<?php }else { ?>
+				<p class="meta"><span class="posted"><a href="<?php echo $this->url(array('controller'=>'profile','action'=>'userdetails','user_id'=>$userinfo['user_id']));?>"><img border="0" src="<?php echo 'http://localhost/sdproject/application/picture/thumbnails/_'.$userinfo['email'].'.png'; ?>" alt="" width="50" height="50" /><?php echo " ".$this->escape($userinfo['FirstName'])." ".$this->escape($userinfo['LastName']); ?></a></span></p>
+			<?php } ?>
+				<div class="entry">
+						<p>	<?php echo $comment['commenttext']; ?> </p>
+				</div>
+				
+			</div>
+			
+<?php endforeach; ?>
+
+<?php echo $this->commentform; ?>

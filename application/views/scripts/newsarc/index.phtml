@@ -1,0 +1,33 @@
+<h2>News Archives:</h2>
+<hr>
+<?php
+	echo $this->form;
+?>
+<?php if($this->posted == 1) { ?>
+<h2>Search Result is here:</h2>
+<hr>
+
+<?php
+if($this->newslist == null)
+{
+	echo "Sorry there is no news of the year(you entered), exists in our database";
+}
+else
+{
+?>
+	
+<?php foreach($this->newslist as $news) : ?>
+		
+		<p><a href="<?php echo $this->url(array('controller'=>'news','action'=>'details','news_id'=>$news['news_id']));?>"><?php echo $this->escape($news['title']); ?></a></p>
+<?php endforeach; ?>
+
+
+
+<?php } ?>
+<?php } ?>
+
+<div class="post">
+<p class="links"> <?php  echo $this->newslist; ?> </p>
+</div>
+
+	

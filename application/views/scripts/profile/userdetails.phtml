@@ -1,0 +1,137 @@
+<h2 class="title">Welcome to <?php echo $this->userInfo['FirstName']; ?>'s profile</h2>
+<br>
+<h3>Personal Information:</h3>
+<hr>
+<br>
+
+<img src="<?php echo 'http://localhost/sdproject/application/picture/upload/_'.$this->userInfo['email'].'.png'; ?>" alt="" align=right>
+<div class="profile">
+<p>
+First name:
+<?php echo $this->userInfo['FirstName']; ?>
+</p>
+</div>
+<div class="profile">
+<p>
+Last name:
+<?php echo $this->userInfo['LastName']; ?>
+</p>
+</div>
+<div class="profile">
+<p>
+Sex:
+<?php 
+	if($this->userInfo['sex']==0)
+	{
+		echo 'male';
+	}
+	else
+	{
+		echo 'female';
+	}
+?>
+</p>
+</div>
+
+<div class="profile">
+<p>
+Date of Birth:
+<?php echo $this->profileInfo['Dateofbirth']; ?>
+</p>
+</div>
+<div class="profile">
+<p>
+Age:
+<?php echo $this->profileInfo['age']; ?>
+</p>
+</div>
+<div class="profile">
+<p>
+Religion:
+<?php echo $this->profileInfo['religion']; ?>
+</p>
+</div>
+<br>
+<h3>Address:</h3>
+<hr>
+<br>
+<div class="profile">
+<p>
+Country:
+<?php echo $this->profileInfo['country']; ?>
+</p>
+</div>
+<div class="profile">
+<p>
+State:
+<?php echo $this->profileInfo['state']; ?>
+</p>
+</div>
+<div class="profile">
+<p>
+city:
+<?php echo $this->profileInfo['city']; ?>
+</p>
+</div>
+<div class="profile">
+<p>
+Email address:
+<?php echo $this->userInfo['email']; ?>
+</p>
+</div>
+<br>
+<h3>Educational Information:</h3>
+<hr>
+<br>
+<div class="profile">
+<p>
+Undergraduation Institution:
+<?php echo $this->profileInfo['undergradeUni']; ?>
+</p>
+</div>
+<div class="profile">
+<p>
+Undergraduation Subject:
+<?php echo $this->profileInfo['undergradeSub']; ?>
+</p>
+</div>
+<div class="profile">
+<p>
+Undergraduation Passing Year:
+<?php echo $this->profileInfo['ugpassyear']; ?>
+</p>
+</div>
+<div class="profile">
+<p>
+Graduation Institution:
+<?php echo $this->profileInfo['gradeUni']; ?>
+</p>
+</div>
+<div class="profile">
+<p>
+Graduation Subject:
+<?php echo $this->profileInfo['gradeSub']; ?>
+</p>
+</div>
+<div class="profile">
+<p>
+Graduation Passing Year:
+<?php echo $this->profileInfo['gpassyear']; ?>
+</p>
+</div>
+<br>
+<h3>Test appearing Information:</h3>
+<hr>
+<br>
+<div class="profile">
+<p>
+Test Type:
+<?php echo $this->profileInfo['test']; ?>
+</p>
+</div>
+<div class="profile">
+<p>
+Test Passing Date:
+<?php echo $this->profileInfo['testpassdate']; ?>
+</p>
+</div>

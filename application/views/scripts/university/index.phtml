@@ -1,0 +1,23 @@
+<h2> All universities here(Sorted by Name) </h2>
+<hr>
+<table border = 1>
+<tr>
+<th><h3>Position</h3></th>
+<th><h3>Name</h3></th>
+<th><h3>Country</h3></th>
+<th><h3>Rank point</h3></th>
+</tr>
+<?php $i = ($this->page-1)*$this->perpage+1; ?>
+<?php foreach($this->unis as $uni) : ?>
+<tr>
+<td><?php echo $i++; ?></td>
+<td><a href="<?php echo $this->url(array('controller'=>'university','action'=>'unidetails', 'uni_id'=>$uni['university_id']));?>"><?php echo $this->escape($uni['uni_name']); ?></a></td>
+<td><?php echo $this->escape($uni[uni_country]);?></td>
+<td><?php echo $this->escape($uni[uni_rank]);?></td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<div class="post">
+ <p class="links"> <?php  echo $this->unis; ?> </p>
+</div>

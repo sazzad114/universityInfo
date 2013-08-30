@@ -1,0 +1,23 @@
+<h2><?php echo $this->dept['departmentname'] ?></h2>
+<hr>
+<br>
+<p><?php echo $this->dept['shortdes'] ?></p>
+<br>
+<h3>Admission Info: </h3>
+<p><?php echo $this->dept['admissionInfo'] ?> </p>
+<h3>Test Type: <?php echo $this->dept['testtype'] ?></h3>
+<br>
+<h3>Test Score: <?php echo $this->dept['testscore'] ?></h3>
+<br>
+<h3>CGPA Requirement: <?php echo $this->dept['cgpa_wanted'] ?></h3>
+<br>
+<h3>Dead line To apply: <?php echo $this->dept['DeadlineTOApply'] ?></h3>
+<br>
+<h3>Term will start: <?php echo $this->dept['TermStarts'] ?></h3>
+<br>
+<h3>Alum Info: </h3>
+<p><?php echo $this->dept['aluminfo'] ?> </p>
+<br>
+<h3>
+	<a href="<?php echo $this->url(array('controller'=>'facultymember','action'=>'index','department_id'=>$this->dept['department_id']));?>"><?php echo "FacultyMemberlist here"; ?></a> 
+</h3>

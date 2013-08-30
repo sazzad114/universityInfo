@@ -1,0 +1,25 @@
+<h2> <?php echo $this->uni[uni_name]; ?> </h2>
+<hr>
+<img src="<?php echo 'http://localhost/sdproject/application/picture/university/_'.$this->uni['university_id'].'.png'; ?>" alt="" align=right>
+<?php echo $this->uni[shortdes];?>
+<br>
+<h3>
+University website link: <a href="<?php echo $this->uni[uni_link]; ?>"><?php echo $this->uni[uni_link]; ?></a>
+<br>
+Country: <?php echo $this->uni[uni_country];?>
+<br>
+State: <?php echo $this->uni[uni_state]; ?>
+<br>
+Rank Point: <?php echo $this->uni[uni_rank]; ?>
+</h3>
+<br>
+<br>
+<h2> Faculty:</h2>
+<hr>
+<?php foreach($this->faculties as $fac) : ?>
+	<h3>
+	<a href="<?php echo $this->url(array('controller'=>'faculty','action'=>'index','faculty_id'=>$fac['faculty_id']));?>"><?php echo $this->escape($fac['faculty_name']); ?></a> 
+	</h3>
+<?php endforeach; ?>
+
+ 

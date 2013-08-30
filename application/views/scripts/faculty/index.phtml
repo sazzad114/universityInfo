@@ -1,0 +1,12 @@
+<h2><?php echo $this->faculty['faculty_name'] ?></h2>
+<hr>
+<br>
+<p><?php echo $this->faculty['shortdes'] ?></p>
+<h3>state: <?php echo $this->faculty['faculty_state'] ?></h3>
+<h2> Departments:</h2>
+<hr>
+<?php foreach($this->depts as $dept) : ?>
+	<h3>
+	<a href="<?php echo $this->url(array('controller'=>'dept','action'=>'index','department_id'=>$dept['department_id']));?>"><?php echo $this->escape($dept['departmentname']); ?></a> 
+	</h3>
+<?php endforeach; ?>

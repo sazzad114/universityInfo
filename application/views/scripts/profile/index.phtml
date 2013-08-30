@@ -1,0 +1,153 @@
+<h2 class="title">Welcome to Your profile</h2>
+<br>
+<h3>Your Personal Information:</h3>
+<hr>
+<br>
+
+<img src="<?php echo 'http://localhost/sdproject/application/picture/upload/_'.$this->userInfo['email'].'.png'; ?>" alt="Upload an Image to display here" align=right>
+<div class="profile">
+<p>
+First name:
+<?php echo $this->userInfo['FirstName']; ?>
+</p>
+</div>
+<div class="profile">
+<p>
+Last name:
+<?php echo $this->userInfo['LastName']; ?>
+</p>
+</div>
+<div class="profile">
+<p>
+Sex:
+<?php 
+	if($this->userInfo['sex']==0)
+	{
+		echo 'male';
+	}
+	else
+	{
+		echo 'female';
+	}
+?>
+</p>
+</div>
+
+<div class="profile">
+<p>
+Your Date of Birth:
+<?php echo $this->profileInfo['Dateofbirth']; ?>
+</p>
+</div>
+<div class="profile">
+<p>
+Your Age:
+<?php echo $this->profileInfo['age']; ?>
+</p>
+</div>
+<div class="profile">
+<p>
+Your Religion:
+<?php echo $this->profileInfo['religion']; ?>
+</p>
+</div>
+<br>
+<h3>Your Address:</h3>
+<hr>
+<br>
+<div class="profile">
+<p>
+Your Country:
+<?php echo $this->profileInfo['country']; ?>
+</p>
+</div>
+<div class="profile">
+<p>
+Your State:
+<?php echo $this->profileInfo['state']; ?>
+</p>
+</div>
+<div class="profile">
+<p>
+Your city:
+<?php echo $this->profileInfo['city']; ?>
+</p>
+</div>
+<div class="profile">
+<p>
+Your Email address:
+<?php echo $this->userInfo['email']; ?>
+</p>
+</div>
+<br>
+<h3>Your Educational Information:</h3>
+<hr>
+<br>
+<div class="profile">
+<p>
+Your Undergraduation Institution:
+<?php echo $this->profileInfo['undergradeUni']; ?>
+</p>
+</div>
+<div class="profile">
+<p>
+Your Undergraduation Subject:
+<?php echo $this->profileInfo['undergradeSub']; ?>
+</p>
+</div>
+<div class="profile">
+<p>
+Your Undergraduation CGPA:
+<?php echo $this->profileInfo['ugcgpa']; ?>
+</p>
+</div>
+<div class="profile">
+<p>
+Your Undergraduation Passing Year:
+<?php echo $this->profileInfo['ugpassyear']; ?>
+</p>
+</div>
+<div class="profile">
+<p>
+Your Graduation Institution:
+<?php echo $this->profileInfo['gradeUni']; ?>
+</p>
+</div>
+<div class="profile">
+<p>
+Your Graduation Subject:
+<?php echo $this->profileInfo['gradeSub']; ?>
+</p>
+</div>
+<div class="profile">
+<p>
+Your Graduation Passing Year:
+<?php echo $this->profileInfo['gpassyear']; ?>
+</p>
+</div>
+<br>
+<h3>Your Test appearing Information:</h3>
+<hr>
+<br>
+<div class="profile">
+<p>
+Your Test Type:
+<?php echo $this->profileInfo['test']; ?>
+</p>
+</div>
+<div class="profile">
+<p>
+Your Test Score:
+<?php echo $this->profileInfo['testscore']; ?>
+</p>
+</div>
+<div class="profile">
+<p>
+Your Test Passing Date:
+<?php echo $this->profileInfo['testpassdate']; ?>
+</p>
+</div>
+<p class="links"><a href="<?php echo $this->url(array('controller'=>'profile','action'=>'update')); ?>">Update your profile</a></p>
+<p class="links"><a href="<?php echo $this->url(array('controller'=>'profile','action'=>'changepassword')); ?>">Change Your Password</a></p>
+<p class="links"><a href="<?php echo $this->url(array('controller'=>'image','action'=>'index')); ?>">Upload image</a></p>
+
